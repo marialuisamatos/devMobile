@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "812714505798",
+    "project_id": "fslc-b7c27",
+    "storage_bucket": "fslc-b7c27.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812714505798:android:3dde7703dead8fd6cdbc47",
+        "android_client_info": {
+          "package_name": "br.com.ficr.cadlogin.flutterfirebaselogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe9Nyaih19J9Zu_Pl7itttIXvKVboFrdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
