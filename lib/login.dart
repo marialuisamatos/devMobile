@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterfirebaselogin/auth.dart';
 
 void main() {
   runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: Login()));
@@ -15,6 +16,12 @@ class _LoginState extends State<Login> {
   bool entrar = true;
 
   final _formKey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _senhaController = TextEditingController();
+  final _nomeController = TextEditingController();
+
+  final _authServ = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +55,7 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 5),
                 TextFormField(
+                  controller: _emailController,
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return "O campo E-mail é obrigatório.";
@@ -85,6 +93,7 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 5),
                 TextFormField(
+                  controller: _senhaController,
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return "O campo senha precisa ser preenchido.";
@@ -120,37 +129,7 @@ class _LoginState extends State<Login> {
                     children: [
                       const SizedBox(height: 5),
                       TextFormField(
-                        validator: (String? value) {
-                          if (value == null || value.isEmpty) {
-                            return "O campo confirme a senha não pode ser nulo.";
-                          }
-                          if (value.length < 8) {
-                            return "O campo E-mail precisa ter no mínimo 8 caracteres.";
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          hintText: "Confirme a Senha",
-                          fillColor: Colors.white,
-                          filled: true,
-                          hintStyle: const TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w200,
-                            fontSize: 16,
-                          ),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w200,
-                          fontSize: 16,
-                        ),
-                        obscureText: true,
-                      ),
-                      const SizedBox(height: 5),
-                      TextFormField(
+                        controller: _nomeController,
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
                             return "O campo nome é obrigatório.";
@@ -227,8 +206,25 @@ class _LoginState extends State<Login> {
     );
   }
   botaoEntrar() {
-    if (_formKey.currentState!.validate()) {
-      print("Formulario valido");
+    
+    String email = _emailController.text;
+    String senha = _senhaController.text;
+    String nome = _nomeController.text;
+
+    if (_formKey.currentState!.validate()){
+      if(entrar){
+        print("entrada validada");
+      }else{
+        print("cadastro validado");
+        print("${_emailController.text}");
+        print("${_senhaController.text}");
+        print("${_nomeController.text}");
+        _authServ.caduser(
+          email: email,
+          senha: senha,
+          nome: nome,
+        );
+      }
     } else {
       print("Formulario invalido");
     }
