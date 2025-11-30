@@ -46,3 +46,8 @@ android {
 flutter {
     source = "../.."
 }
+
+dependencies {
+    implementation(kotlin("stdlib"))
+    implementation("androidx.multidex:multidex:2.0.1")
+}

@@ -5,6 +5,7 @@ import 'package:flutterfirebaselogin/login.dart';
 import 'package:flutterfirebaselogin/interna.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
 void main() async {
@@ -14,7 +15,21 @@ void main() async {
   );
   runApp(
     const MaterialApp(debugShowCheckedModeBanner: false, 
-    home: Login(),
+    home: Root(),
     ),
   );
+}
+class Root extends StatelessWidget {
+  const Root({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(stream: FirebaseAuth.instance.authStateChanges(),
+    builder: (context, snapshot) {
+      if (snapshot.hasData) {
+        return const Interna();
+      } else {
+        return const Login();
+      }});
+  }
 }
