@@ -43,10 +43,10 @@ O sistema simula o funcionamento de uma **cafeteria temática de gatos**, onde o
 
 | Nome | Função |
 |------------|-----------------------------|
-| André deFrança | Front/Firebase Authentication |
-| Maria Luisa | Front/Design |
-| Fábio Araújo | Front-End |
-|Vitórya Medeiros| Front-End|
+| André deFrança | Frontend/Firebase Authentication |
+| Maria Luisa | Frontend/Design |
+| Fábio Araújo | Frontend |
+|Vitórya Medeiros| Frontend|
 | Kevin Lucas | Backend |
 
 
@@ -62,6 +62,7 @@ https://docs.flutter.dev/get-started/install
 Verificar se está tudo ok:
 ```bash
 flutter doctor
+
 
 
 
