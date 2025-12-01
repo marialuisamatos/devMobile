@@ -1,6 +1,6 @@
 ![miau](https://i.pinimg.com/736x/91/a0/1c/91a01c8299f425de6d9fd244c0060944.jpg)
 
-# 📱 Mini Sistema Mobile – Flutter + Firebase
+# 📱 Projeto Coffee Kat – Flutter + Firebase 
 
 Este projeto é um **app mobile** desenvolvido com **Flutter + Firebase**, contendo:
 - Cadastro de usuário
@@ -10,15 +10,36 @@ Este projeto é um **app mobile** desenvolvido com **Flutter + Firebase**, conte
 
 ---
 
+### A ideia do Peojeto
+
+Este projeto é um **app mobile** criado com Flutter + Firebase**, desenvolvido para a atividade acadêmica proposta.  
+O sistema simula o funcionamento de uma **cafeteria temática de gatos**, onde o usuário precisa se cadastrar e fazer login para acessar a área interna do CatCafé (menu/cadárpio).
+ 
+
+---
+
 ## 🚀 Funcionalidades
 
-✔ Cadastro de usuário com validação  
+✔ Cadastro de usuário com validação
 ✔ Login com autenticação Firebase  
 ✔ Acesso à tela interna apenas com login  
 ✔ Logout em tempo real  
 ✔ Dados salvos no Firebase Authentication  
 
 ---
+
+## 🛠️ Tecnologias Usadas
+
+| Tecnologia | Uso |
+|------------|-----------------------------|
+| Flutter | Base do app |
+| Dart | Linguagem |
+| Firebase | Backend |
+| Firebase Authentication | Login/Cadastro |
+
+---
+
+
 
 ## ▶️ Como Rodar na Sua Máquina
 
@@ -28,3 +49,4 @@ https://docs.flutter.dev/get-started/install
 Verificar se está tudo ok:
 ```bash
 flutter doctor
+
